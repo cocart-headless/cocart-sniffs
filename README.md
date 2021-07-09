@@ -47,4 +47,4 @@ PHPCS config file:
 
 ## Changelog
 
-[See changelog for details](https://github.com/cocart/cocart-sniffs/blob/master/CHANGELOG.md)
+[See changelog for details](https://github.com/co-cart/cocart-sniffs/blob/master/CHANGELOG.md)
