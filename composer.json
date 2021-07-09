@@ -1,5 +1,5 @@
 {
-    "name": "cocart/cocart-sniffs",
+    "name": "co-cart/cocart-sniffs",
     "description": "CoCart sniffs",
     "type": "phpcodesniffer-standard",
     "license": "MIT",
