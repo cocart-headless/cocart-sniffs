@@ -1,0 +1,24 @@
+{
+    "name": "cocart/cocart-sniffs",
+    "description": "CoCart sniffs",
+    "type": "phpcodesniffer-standard",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sébastien Dumont",
+            "email": "mailme@sebastiendumont.com"
+        }
+    ],
+    "keywords": [
+        "phpcs",
+        "standards",
+        "WordPress",
+        "CoCart"
+    ],
+    "require": {
+        "php": ">=7.0",
+        "wp-coding-standards/wpcs": "^2.3.0",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+        "phpcompatibility/phpcompatibility-wp": "^2.1.1"
+    }
+}

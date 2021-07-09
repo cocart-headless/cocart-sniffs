@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<ruleset name="CoCart Core">
+	<description>CoCart Core coding standards.</description>
+
+	<!-- Include all of our custom sniffs -->
+	<rule ref="CoCart" />
+
+	<!-- PHPCompatibility -->
+	<rule ref="PHPCompatibilityWP" />
+
+	<!-- WordPress -->
+	<rule ref="WordPress">
+		<exclude name="WordPress.DB.DirectDatabaseQuery.NoCaching" />
+		<exclude name="WordPress.DB.DirectDatabaseQuery.DirectQuery" />
+		<exclude name="WordPress.DB.DirectDatabaseQuery.SchemaChange" />
+	</rule>
+
+	<rule ref="WordPress.Security.ValidatedSanitizedInput">
+		<properties>
+			<property name="customSanitizingFunctions" type="array" value="wc_clean,wc_format_decimal,wc_stock_amount" />
+		</properties>
+	</rule>
+
+	<rule ref="WordPress.Security.EscapeOutput">
+		<properties>
+			<property name="customEscapingFunctions" type="array" value="wc_help_tip,wc_kses_notice" />
+		</properties>
+	</rule>
+
+	<rule ref="Squiz.Commenting">
+		<exclude name="Squiz.Commenting.LongConditionClosingComment" />
+		<exclude name="Squiz.Commenting.PostStatementComment" />
+	</rule>
+</ruleset>
