@@ -1,6 +1,6 @@
 {
     "name": "co-cart/cocart-sniffs",
-    "description": "CoCart sniffs",
+    "description": "Collection of PHP_CodeSniffer sniffs for CoCart development.",
     "type": "phpcodesniffer-standard",
     "license": "MIT",
     "authors": [
