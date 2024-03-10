@@ -1,6 +1,6 @@
 <?php
 /**
- * Sniff to prohibit some file comment tags on CoCart
+ * Sniff to prohibit some file comment tags in CoCart.
  */
 
 namespace CoCart\Sniffs\Commenting;
