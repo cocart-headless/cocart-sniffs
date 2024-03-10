@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Added new sniff for comments on hooks.
 * Updated dependency for `wp-coding-standards/wpcs` now version `3.0.0`.
 * Updated dependency for `dealerdirect/phpcodesniffer-composer-installer` now version `1.0.0`.
+* Updated dependency for `phpcompatibility/phpcompatibility-wp` now version `2.1.4`.
 
 ## 0.0.2 - 2021-07-11
 
