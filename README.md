@@ -44,7 +44,6 @@ PHPCS config file:
 </ruleset>
 ```
 
-
 ## Changelog
 
-[See changelog for details](https://github.com/co-cart/cocart-sniffs/blob/master/CHANGELOG.md)
+[See changelog for details](https://github.com/cocart-headless/cocart-sniffs/blob/master/CHANGELOG.md)
