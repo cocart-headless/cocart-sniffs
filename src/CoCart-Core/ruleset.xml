@@ -17,7 +17,7 @@
 
 	<rule ref="WordPress.Security.ValidatedSanitizedInput">
 		<properties>
-			<property name="customSanitizingFunctions" type="array" value="wc_clean,wc_format_decimal,wc_stock_amount" />
+			<property name="customSanitizingFunctions" type="array" value="wc_clean,wc_sanitize_tooltip,wc_format_decimal,wc_stock_amount,wc_sanitize_permalink,wc_sanitize_textarea" />
 		</properties>
 	</rule>
 
