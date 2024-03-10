@@ -5,7 +5,7 @@ Collection of PHP_CodeSniffer sniffs for CoCart.
 ## Installation
 
 ```php
-composer require co-cart/cocart-sniffs
+composer require cocart-headless/cocart-sniffs
 ```
 
 ## Usage
