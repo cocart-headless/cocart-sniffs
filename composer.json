@@ -1,24 +1,24 @@
 {
-    "name": "co-cart/cocart-sniffs",
+    "name": "cocart-headless/cocart-sniffs",
     "description": "Collection of PHP_CodeSniffer sniffs for CoCart development.",
     "type": "phpcodesniffer-standard",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Sébastien Dumont",
-            "email": "mailme@sebastiendumont.com"
-        }
-    ],
     "keywords": [
         "phpcs",
         "standards",
+        "static analysis",
         "WordPress",
         "CoCart"
     ],
     "require": {
         "php": ">=7.0",
-        "wp-coding-standards/wpcs": "^2.3.0",
+        "wp-coding-standards/wpcs": "^3.0.0",
         "dealerdirect/phpcodesniffer-composer-installer": "^1.0.0",
         "phpcompatibility/phpcompatibility-wp": "2.1.2"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     }
 }
