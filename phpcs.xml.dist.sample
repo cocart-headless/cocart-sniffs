@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!--
+    EXAMPLE PHPCS CONFIGURATION FOR COCART PROJECTS
+
+    Copy this file to your project root as phpcs.xml or phpcs.xml.dist
+    Then customize the text_domain and exclusions for your project.
+-->
+<ruleset name="CoCart Project">
+	<description>CoCart project coding standards</description>
+
+	<!-- What to scan -->
+	<file>.</file>
+
+	<!-- Exclude paths -->
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/tests/*</exclude-pattern>
+
+	<!-- How to scan -->
+	<arg name="colors"/>                    <!-- Enable colors in report -->
+	<arg value="ps"/>                       <!-- Show progress and error codes -->
+	<arg name="basepath" value="./"/>       <!-- Strip file paths in reports -->
+	<arg name="parallel" value="8"/>        <!-- Check 8 files simultaneously -->
+	<arg name="extensions" value="php"/>    <!-- Only check PHP files -->
+
+	<!-- Rules: Use CoCart standard (includes all configurations) -->
+	<rule ref="CoCart-Core">
+		<!-- Project-specific exclusions (customize as needed) -->
+		<exclude name="Core.Commenting.CommentTags.AuthorTag" />
+		<exclude name="WordPress.PHP.DontExtract" />
+	</rule>
+
+	<!-- WordPress I18n: REQUIRED - Set your project's text domain -->
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="your-text-domain"/><!-- CHANGE THIS -->
+			</property>
+		</properties>
+	</rule>
+
+	<!-- Project-specific file exclusions (customize as needed) -->
+	<rule ref="WordPress.Files.FileName.NotHyphenatedLowercase">
+		<exclude-pattern>languages/</exclude-pattern>
+	</rule>
+
+	<rule ref="WordPress.Files.FileName.InvalidClassFileName">
+		<exclude-pattern>includes/*.php</exclude-pattern>
+	</rule>
+
+</ruleset>

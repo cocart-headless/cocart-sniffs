@@ -2,11 +2,20 @@
 <ruleset name="CoCart Core">
 	<description>CoCart Core coding standards.</description>
 
+	<!-- Configs -->
+	<config name="minimum_supported_wp_version" value="5.6" />
+	<config name="testVersion" value="7.4-" />
+
 	<!-- Include all of our custom sniffs -->
 	<rule ref="CoCart" />
 
 	<!-- PHPCompatibility -->
 	<rule ref="PHPCompatibilityWP" />
+
+	<rule ref="PHPCompatibility">
+		<include-pattern>*\.php$</include-pattern>
+		<exclude-pattern>tests/</exclude-pattern>
+	</rule>
 
 	<!-- WordPress -->
 	<rule ref="WordPress">
@@ -17,13 +26,23 @@
 
 	<rule ref="WordPress.Security.ValidatedSanitizedInput">
 		<properties>
-			<property name="customSanitizingFunctions" type="array" value="wc_clean,wc_sanitize_tooltip,wc_format_decimal,wc_stock_amount,wc_sanitize_permalink,wc_sanitize_textarea" />
+			<property name="customSanitizingFunctions" type="array">
+				<element value="wc_clean"/>
+				<element value="wc_sanitize_tooltip"/>
+				<element value="wc_format_decimal"/>
+				<element value="wc_stock_amount"/>
+				<element value="wc_sanitize_permalink"/>
+				<element value="wc_sanitize_textarea"/>
+			</property>
 		</properties>
 	</rule>
 
 	<rule ref="WordPress.Security.EscapeOutput">
 		<properties>
-			<property name="customEscapingFunctions" type="array" value="wc_help_tip,wc_kses_notice" />
+			<property name="customEscapingFunctions" type="array">
+				<element value="wc_help_tip"/>
+				<element value="wc_kses_notice"/>
+			</property>
 		</properties>
 	</rule>
 
@@ -44,6 +63,21 @@
 	</rule>
 
 	<rule ref="PEAR.NamingConventions.ValidClassName.Invalid">
+		<severity>0</severity>
+	</rule>
+
+	<!-- WordPress: Allow non-strict in_array() comparisons (common in WP/WC code) -->
+	<rule ref="WordPress.PHP.StrictInArray.MissingTrueStrict">
+		<severity>0</severity>
+	</rule>
+
+	<!-- WordPress: Allow preg_quote() without delimiter parameter (not always needed) -->
+	<rule ref="WordPress.PHP.PregQuoteDelimiter.Missing">
+		<severity>0</severity>
+	</rule>
+
+	<!-- PSR2: Allow underscore-prefixed private/protected properties (legacy code pattern) -->
+	<rule ref="PSR2.Classes.PropertyDeclaration.Underscore">
 		<severity>0</severity>
 	</rule>
 

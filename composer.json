@@ -11,14 +11,50 @@
         "CoCart"
     ],
     "require": {
-        "php": ">=7.0",
-        "wp-coding-standards/wpcs": "^3.0.0",
+        "php": ">=7.4",
+        "automattic/vipwpcs": "^3.0.1",
+        "wp-coding-standards/wpcs": "^3.3.0",
         "dealerdirect/phpcodesniffer-composer-installer": "^1.0.0",
-        "phpcompatibility/phpcompatibility-wp": "2.1.4"
+        "phpcompatibility/phpcompatibility-wp": "^2.1.6",
+        "phpcsstandards/phpcsextra": "^1.5.0",
+        "phpstan/phpstan": "^2.0",
+        "szepeviktor/phpstan-wordpress": "^2.0",
+        "phpstan/extension-installer": "^1.4",
+        "php-stubs/woocommerce-stubs": "^10.0",
+        "php-stubs/wp-cli-stubs": "^2.10",
+        "wpackagist-plugin/plugin-check": "^2.0"
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        }
+    ],
     "config": {
         "allow-plugins": {
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "phpstan/extension-installer": true,
+            "composer/installers": true
         }
+    },
+    "scripts": {
+        "phpcs": "phpcs --standard=CoCart-Core",
+        "phpcbf": "phpcbf --standard=CoCart-Core",
+        "phpcs:ci": "phpcs --standard=CoCart-Core --report=checkstyle --report-file=phpcs-report.xml",
+        "phpcs:fix": "@phpcbf",
+        "phpstan": "phpstan analyse --memory-limit=2048M",
+        "plugin-check": "plugin-check .",
+        "lint": "@phpcs",
+        "format": "@phpcbf"
+    },
+    "scripts-descriptions": {
+        "phpcs": "Run PHPCS checks using CoCart's standard",
+        "phpcbf": "Auto-fix PHPCS issues using CoCart's standard",
+        "phpcs:ci": "Run PHPCS for CI/CD with checkstyle output",
+        "phpcs:fix": "Alias for phpcbf - auto-fix issues",
+        "phpstan": "Run static analysis with PHPStan",
+        "plugin-check": "Run WordPress Plugin Check for plugin compliance",
+        "lint": "Alias for phpcs - check code standards",
+        "format": "Alias for phpcbf - format code"
     }
 }
