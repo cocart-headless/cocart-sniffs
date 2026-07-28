@@ -18,16 +18,9 @@ Collection of PHP_CodeSniffer sniffs for CoCart projects.
 - ✅ PHPStan 2.0 with WordPress extensions
 - ✅ WooCommerce & WP-CLI type stubs
 
-### WordPress Plugin Compliance
-
-- ✅ WordPress Plugin Check 2.0
-
 ## Installation
 
-This package requires the [WPackagist](https://wpackagist.org) repository to resolve the WordPress Plugin Check plugin. Add it to your project's `composer.json` before requiring this package:
-
 ```bash
-composer config repositories.wpackagist composer https://wpackagist.org
 composer require --dev cocart-headless/cocart-sniffs
 ```
 
@@ -90,9 +83,6 @@ composer phpcs:ci      # For CI/CD (generates checkstyle XML report)
 
 # Static Analysis (PHPStan)
 composer phpstan       # Run static analysis
-
-# WordPress Plugin Compliance
-composer plugin-check  # Run WordPress Plugin Check
 ```
 
 ### Direct PHPCS Commands
@@ -129,9 +119,6 @@ This package is a comprehensive development toolkit for CoCart projects, includi
 - PHPStan WordPress extensions
 - WooCommerce stubs for type checking
 - WP-CLI stubs for type checking
-
-**WordPress Plugin Compliance:**
-- WordPress Plugin Check 2.0 for plugin guidelines compliance
 
 ### CoCart-Core Standard Rules
 

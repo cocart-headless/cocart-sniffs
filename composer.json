@@ -21,20 +21,12 @@
         "szepeviktor/phpstan-wordpress": "^2.0",
         "phpstan/extension-installer": "^1.4",
         "php-stubs/woocommerce-stubs": "^10.0",
-        "php-stubs/wp-cli-stubs": "^2.10",
-        "wpackagist-plugin/plugin-check": "^2.0"
+        "php-stubs/wp-cli-stubs": "^2.10"
     },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://wpackagist.org"
-        }
-    ],
     "config": {
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "phpstan/extension-installer": true,
-            "composer/installers": true
+            "phpstan/extension-installer": true
         }
     },
     "scripts": {
@@ -43,7 +35,6 @@
         "phpcs:ci": "phpcs --standard=CoCart-Core --report=checkstyle --report-file=phpcs-report.xml",
         "phpcs:fix": "@phpcbf",
         "phpstan": "phpstan analyse --memory-limit=2048M",
-        "plugin-check": "plugin-check .",
         "lint": "@phpcs",
         "format": "@phpcbf"
     },
@@ -53,7 +44,6 @@
         "phpcs:ci": "Run PHPCS for CI/CD with checkstyle output",
         "phpcs:fix": "Alias for phpcbf - auto-fix issues",
         "phpstan": "Run static analysis with PHPStan",
-        "plugin-check": "Run WordPress Plugin Check for plugin compliance",
         "lint": "Alias for phpcs - check code standards",
         "format": "Alias for phpcbf - format code"
     }
